@@ -11,22 +11,33 @@ import jsonDoc from './doc';
   encapsulation: ViewEncapsulation.None,
 })
 export class RichTextComponent implements OnInit, OnDestroy {
-editordoc = jsonDoc;
-  
+  editordoc = jsonDoc;
+
   editor: Editor = new Editor;
-toolbar: Toolbar = [
-    ['bold', 'italic'],
-    ['underline', 'strike'],
-    ['code', 'blockquote'],
-    ['ordered_list', 'bullet_list'],
-    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
-    ['link', 'image'],
-    ['text_color', 'background_color'],
-    ['align_left', 'align_center', 'align_right', 'align_justify'],
-];
+  toolbar: Toolbar = [
+    [
+      'bold',
+      'italic',
+      'align_left',
+      'align_center',
+      'align_right',
+      'align_justify',
+      'link',
+      'image',
+      'underline',
+      'text_color',
+      'background_color',
+      'strike',
+      'code',
+      'blockquote',
+      'ordered_list',
+      'bullet_list',
+      { heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }
+    ],
+  ];
   constructor() { }
 
-   form = new FormGroup({
+  form = new FormGroup({
     editorContent: new FormControl(
       { value: jsonDoc, disabled: false },
       Validators.required()
