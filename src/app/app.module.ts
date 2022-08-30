@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RichTextComponent } from './components/rich-text/rich-text.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { NgxEditorModule } from 'ngx-editor';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxEditorModule
+    NgxEditorModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
